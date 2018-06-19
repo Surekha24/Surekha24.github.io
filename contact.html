@@ -99,7 +99,7 @@
 					<ul class="contact-info">
 						<li><i class="icon-location-pin"></i> </li>
 						<li><i class="icon-phone2"></i> </li>
-						<li><i class="icon-mail"></i><a href="mailto:surekhabhugeloo@gmail.com">surekhabhugeloo@gmail.com</a></li>
+						<li><i class="icon-mail"></i><a href="mailto:surekhabhugeloo@gmail.com">Email</a></li>
 						<li><i class="icon-globe2"></i> </li>
 					</ul>
 				</div>
@@ -122,9 +122,15 @@
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input type="submit" value="Send Message" class="btn btn-primary">
+								<input type="submit" value="Send Message" class="btn btn-primary"> 
 							</div>
 						</div>
+						
+						<?php
+                                                   if($_POST["Message"]) {
+                                                     mail("surekhabhugeloo@gmail.com", "Form to email message", $_POST["message"], "From: Email");
+                                                                   }
+                                                                      ?>
 					</div>
 				</div>
 			</div>
