@@ -49,8 +49,10 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
+		
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -68,6 +70,16 @@
 	</head>
 	<body>
 	<header>
+		
+<?php
+// use this instagram access token generator http://instagram.pixelunion.net/
+$access_token="1425223806.1677ed0.2aea26d4c6c74e119de8c59aed5c05e6";
+$photo_count=3;
+     
+$json_link="https://www.instagram.com/surekha_bhugeloo/";
+$json_link.="access_token={$access_token}&count={$photo_count}";
+?>
+		
 		<div class="container text-center">
 			<div class="fh5co-navbar-brand">
 				<a class="fh5co-logo" href="index.html">Surekha Bhugeloo</a>
