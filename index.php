@@ -80,6 +80,10 @@ $json_link="https://www.instagram.com/surekha_bhugeloo/";
 $json_link.="access_token={$access_token}&count={$photo_count}";
 ?>
 		
+	$json = file_get_contents($json_link);
+$obj = json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
+
+		
 		<div class="container text-center">
 			<div class="fh5co-navbar-brand">
 				<a class="fh5co-logo" href="index.html">Surekha Bhugeloo</a>
@@ -253,40 +257,31 @@ $json_link.="access_token={$access_token}&count={$photo_count}";
 			<div class="heading-section text-center">
 				<h2>Latest IG Posts</h2>
 			</div>
-			<div class="owl-carousel owl-carousel2">
-				
-				<div class="item">
-					<!-- <a href="#" class="image-popup"> -->
-					<img class="img-left" src="images/ig1.jpg" alt="Image">
-					<a href="#" class="pop-up-overlay text-center">
-						<div class="desc">
-							<h3> </h3>
-							<span> </span>
-						</div>
-					</a>
-				</div>
-				
-				<div class="item">
-					<img class="img-center" src="images/ig2.jpg" alt="Image">
-					<a href="#" class="pop-up-overlay pop-up-overlay-color-2 text-center">
-						<div class="desc">
-							<h3> </h3>
-							<span> </span>
-						</div>
-					</a>
-				</div>
-				
-				<div class="item">
-					<!-- <a href="#" class="image-popup"> -->
-					<img class="img-right" src="images/ig3.jpg" alt="image">
-					<!-- </a> -->
-					<a href="#" class="pop-up-overlay pop-up-overlay-color-3 text-center">
-						<div class="desc">
-							<h3> </h3>
-							<span> </span>
-						</div>
-					</a>
-				</div>
+			
+			foreach ($obj['data'] as $post) {
+     
+    $pic_text=$post['caption']['text'];
+    $pic_link=$post['link'];
+    $pic_like_count=$post['likes']['count'];
+    $pic_comment_count=$post['comments']['count'];
+    $pic_src=str_replace("http://", "https://", $post['images']['standard_resolution']['url']);
+    $pic_created_time=date("F j, Y", $post['caption']['created_time']);
+    $pic_created_time=date("F j, Y", strtotime($pic_created_time . " +1 days"));
+     
+    echo "<div class='col-md-4 col-sm-6 col-xs-12 item_box'>";        
+        echo "<a href='{$pic_link}' target='_blank'>";
+            echo "<img class='img-responsive photo-thumb' src='{$pic_src}' alt='{$pic_text}'>";
+        echo "</a>";
+        echo "<p>";
+            echo "<p>";
+                echo "<div style='color:#888;'>";
+                    echo "<a href='{$pic_link}' target='_blank'>{$pic_created_time}</a>";
+                echo "</div>";
+            echo "</p>";
+            echo "<p>{$pic_text}</p>";
+        echo "</p>";
+    echo "</div>";
+}
 				
 		</div>
 	</div><!-- end fh5co-featured-work-section -->
