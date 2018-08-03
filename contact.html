@@ -4,6 +4,8 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
+	<link rel="shortcut icon" href="images/favicon.ico">
+		
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Surekha Bhugeloo</title>
@@ -12,20 +14,7 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="Surekha Bhugeloo" />
 
-  <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		https://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		https://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
+ 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -38,8 +27,7 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
+	
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		
@@ -107,32 +95,37 @@
 				
 				<div class="col-md-8 animate-box">
 					<div class="row">
+						
 						<div class="col-md-6">
+							
 							<div class="form-group">
+								<form method="post" name="myemailform" action="form-to-email.php">
 								<input type="text" class="form-control" placeholder="Name">
 							</div>
 						</div>
+							
 						<div class="col-md-6">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Email">
 							</div>
 						</div>
+							
 						<div class="col-md-12">
 							<div class="form-group">
 								<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
 							</div>
 						</div>
+							
 						<div class="col-md-12">
 							<div class="form-group">
 								<input type="submit" value="Send Message" class="btn btn-primary"> 
+								</form>
 							</div>
 						</div>
 						
-						<?php
-                                                   if($_POST["Message"]) {
-                                                     mail("surekhabhugeloo@gmail.com", "Form to email message", $_POST["message"], "From: Email");
-                                                                   }
-                                                                      ?>
+						
+                                                     
+
 					</div>
 				</div>
 			</div>
